@@ -1,21 +1,24 @@
-import { Routes,Route, Router } from 'react-router-dom'
+
+import { Routes, Route } from 'react-router-dom'
 import './App.css'
 import Home from './pages/Home'
 import Cart from './pages/Cart'
 import Navbar from './components/Navbar'
 function App() {
-  
+
 
   return (
-    <>
-    <div>
-      <Navbar/>
+    <div className=''>
+      <div className='border items-end'>
+        <Navbar />
+      </div>
+      <div>
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/cart' element={<Cart />} />
+        </Routes>
+      </div>
     </div>
-    <Router>
-      <Route path='/' element={<Home/>}/>
-      <Route path='/cart' element={<Cart/>}/>
-    </Router>
-    </>
   )
 }
 
