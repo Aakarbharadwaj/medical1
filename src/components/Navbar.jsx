@@ -14,7 +14,7 @@ const Navbar = () => {
             <div>
                 <ul className='flex text-blue-50'>
                     <li><Link to={'/'}>Home</Link></li>
-                    <li className='ml-10 mt-1 ml-5'><Link to={'/cart'}><FaShoppingCart /></Link></li>
+                    <li className='ml-10 mt-1'><Link to={'/cart'}><FaShoppingCart /></Link></li>
                 </ul>
             </div>
         </nav>
