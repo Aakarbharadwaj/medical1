@@ -4,6 +4,7 @@ import './App.css'
 import Home from './pages/Home'
 import Cart from './pages/Cart'
 import Navbar from './components/Navbar'
+import Search from './components/Search'
 function App() {
 
 
@@ -11,6 +12,7 @@ function App() {
     <div className=''>
       <div className='border items-end'>
         <Navbar />
+        <Search />
       </div>
       <div>
         <Routes>
