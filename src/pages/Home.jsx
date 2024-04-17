@@ -35,7 +35,9 @@ const Home = () => {
                     return (
                         <Product key={item.id} item={item} />
                     )
-                })}
+                })
+
+            }
         </div>
     )
 }
