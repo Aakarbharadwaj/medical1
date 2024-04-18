@@ -10,7 +10,7 @@ function App() {
 
   return (
     <div className=''>
-      <div className='border items-end'>
+      <div className='items-end'>
         <Navbar />
         <Search />
       </div>
