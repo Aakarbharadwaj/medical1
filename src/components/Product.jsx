@@ -31,9 +31,6 @@ const Product = (props) => {
                 {
                     cart.some((p) => p.id === item.id) ? (<button onClick={() => removeFromCart(item)} className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Remove</button>) : (<button onClick={() => addToCart(item)} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Add</button>)
                 }
-
-
-
             </div>
         </div>
     );

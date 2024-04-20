@@ -1,13 +1,16 @@
 import React, { useState } from 'react'
 import { FaSearch } from "react-icons/fa";
-
+import { setSearchKeyword } from '../redux/slice/SearchSlice';
+import { useDispatch } from 'react-redux';
 const Search = () => {
     const [searchItem, setSearchItem] = useState("");
     const handleChange = (e) => {
         setSearchItem(e.target.value);
     }
+    const dispatch = useDispatch();
+
     const handleSearch = () => {
-        dispatch(search(searchItem))
+        dispatch(setSearchKeyword(searchItem))
     }
     return (
         <div className='border-2 rounded-full w-1/3 m-auto mt-5 flex px-2 hover:border-orange-500 hover:scale-150 transition duration-300'>
@@ -19,19 +22,17 @@ const Search = () => {
 
 export default Search
 
+
 // import React, { useState } from 'react'
 // import { FaSearch } from "react-icons/fa";
-// import { setSearchKeyword } from '../redux/slice/SearchSlice';
-// import { useDispatch } from 'react-redux';
+
 // const Search = () => {
 //     const [searchItem, setSearchItem] = useState("");
 //     const handleChange = (e) => {
 //         setSearchItem(e.target.value);
 //     }
-//     const dispatch = useDispatch();
-
 //     const handleSearch = () => {
-//         dispatch(setSearchKeyword(searchItem))
+//         dispatch(search(searchItem))
 //     }
 //     return (
 //         <div className='border-2 rounded-full w-1/3 m-auto mt-5 flex px-2 hover:border-orange-500 hover:scale-150 transition duration-300'>
