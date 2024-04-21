@@ -9,8 +9,10 @@ const Home = () => {
     const [loading, setLoading] = useState(false);
     const [post, setPost] = useState([]);
 
+    //setting keyword
     let keyword = useSelector((state) => state.search.keyword)
 
+    //funtion to fetch data from api
     const fetchProductData = async () => {
         setLoading(true);
 
