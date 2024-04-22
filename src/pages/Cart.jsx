@@ -8,7 +8,8 @@ const Cart = () => {
     const [totalAmount, setTotalAmount] = useState(0);
     useEffect(() => {
         setTotalAmount(cart.reduce((a, b) => {
-            return a + b.price;
+            const convertedPrice = parseFloat(b.price)
+            return a + convertedPrice;
         }, 0))
     }, [cart])
     return (
@@ -26,7 +27,7 @@ const Cart = () => {
                         <p>Total items :{cart.length}</p>
                     </div>
                     <div>
-                        <h1 >Total Amount:<span className='text-green-700'>{totalAmount}</span></h1>
+                        <h1 >Total Amount:<span className='text-green-700'>{` $${totalAmount}`}</span></h1>
                     </div>
                 </div>
             </div>) : (

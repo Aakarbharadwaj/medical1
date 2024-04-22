@@ -1,28 +1,23 @@
-
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react';
 import Product from '../components/Product';
 import Spinner from '../components/Spinner';
 import { useSelector } from 'react-redux';
+import axios from 'axios'; // Import Axios
 
 const Home = () => {
-    const API_url = "https://fakestoreapi.com/products"
+    const apiUrl = "http://localhost:4000/api/v1";
     const [loading, setLoading] = useState(false);
     const [post, setPost] = useState([]);
+    const keyword = useSelector((state) => state.search.keyword);
 
-    //setting keyword
-    let keyword = useSelector((state) => state.search.keyword)
-
-    //funtion to fetch data from api
     const fetchProductData = async () => {
         setLoading(true);
 
         try {
-            const res = await fetch(API_url);
-            const data = await res.json();
-            setPost(data);
-        }
-        catch (err) {
-            console.log("error in loading");
+            const res = await axios.get(`${apiUrl}/getProducts`); // Use axios.get with the correct URL
+            setPost(res.data); // Access the data property of the response object
+        } catch (err) {
+            console.log("Error in loading:", err);
             setPost([]);
         }
 
@@ -33,8 +28,8 @@ const Home = () => {
         setLoading(true);
 
         try {
-            const res = await fetch("https://fakestoreapi.com/products");
-            const data = await res.json();
+            const res = await axios.get(`${apiUrl}/getProducts`); // Use axios.get with the correct URL
+            const data = res.data; // Access the data property of the response object
 
             if (keyword !== '') {
                 // Filter products based on categories that include the keyword
@@ -45,9 +40,8 @@ const Home = () => {
             } else {
                 setPost(data);
             }
-        }
-        catch (err) {
-            console.log("error in loading");
+        } catch (err) {
+            console.log("Error in loading:", err);
             setPost([]);
         }
 
@@ -62,68 +56,15 @@ const Home = () => {
             fetchProductDataWithKeyword(keyword);
         }
     }, [keyword]);
-    return (
-        <div className="flex flex-wrap gap-6 w-90 bg-green-50 mx-auto my-6 px-6 py-6 justify-center">
 
+    return (
+        <div className="flex flex-wrap gap-6 w-90 bg-blue-50 mx-auto my-6 px-6 py-6 justify-center">
             {loading ?
                 <Spinner /> :
-
-                post.map(item => {
-
-                    return (
-                        <Product key={item.id} item={item} />
-                    )
-                })
-
+                post ? post.map(item => <Product key={item.id} item={item} />) : ("no data found")
             }
         </div>
-    )
+    );
 }
 
-export default Home
-
-// import React, { useEffect, useState } from 'react'
-// import Product from '../components/Product';
-// import Spinner from '../components/Spinner';
-
-// const Home = () => {
-//     const API_url = "https://fakestoreapi.com/products"
-//     const [loading, setLoading] = useState(false);
-//     const [post, setPost] = useState([]);
-//     const fetchProductData = async () => {
-//         setLoading(true);
-
-//         try {
-//             const res = await fetch(API_url);
-//             const data = await res.json();
-//             setPost(data);
-//         }
-//         catch (err) {
-//             console.log("error in loading");
-//             setPost([]);
-//         }
-
-//         setLoading(false);
-//     }
-//     useEffect(() => {
-//         fetchProductData();
-//     }, [])
-//     return (
-//         <div className="flex flex-wrap gap-6 w-90 bg-green-50 mx-auto my-6 px-6 py-6 justify-center">
-
-//             {loading ?
-//                 <Spinner /> :
-
-//                 post.map(item => {
-
-//                     return (
-//                         <Product key={item.id} item={item} />
-//                     )
-//                 })
-
-//             }
-//         </div>
-//     )
-// }
-
-// export default Home
+export default Home;
