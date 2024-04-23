@@ -1,12 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import { FaShoppingCart } from "react-icons/fa";
 import { useSelector } from 'react-redux';
 
-
 const
     Navbar = () => {
         const cart = useSelector((state) => state.cart);
+        const [login, setLogin] = useState(true);
         return (
 
             <nav className='flex justify-between items-center p-2 bg-blue-900'>
@@ -18,7 +18,7 @@ const
                     <ul className='flex text-blue-50'>
                         <li className='hover:text-green-400'><NavLink to={'/'}>Home</NavLink></li>
                         <li className='ml-10 hover:text-green-400'><NavLink to={'/about'}>About</NavLink></li>
-                        <li className='ml-10 hover:text-green-400'><NavLink to={'/login'}>LogIn</NavLink></li>
+                        {login ? (<li className='ml-10 hover:text-green-400' onClick={()=>setLogin(false)}><NavLink to={'/login'}>LogIn</NavLink></li>) : (<li className='ml-10 hover:text-green-400 ' onClick={()=>setLogin(true)}><NavLink to={'/signup'}>SignUp</NavLink></li>)}
                         <li className='ml-20 hover:text-green-400'>
                             <NavLink to={'/cart'}>
                                 <div className="relative">
