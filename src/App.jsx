@@ -7,6 +7,7 @@ import Navbar from './components/Navbar'
 import Search from './components/Search'
 import About from './pages/About'
 import Login from './pages/Login'
+import Description from './pages/Description'
 function App() {
 
 
@@ -22,6 +23,7 @@ function App() {
           <Route path='/cart' element={<Cart />} />
           <Route path='/about' element={<About />} />
           <Route path='/login' element={<Login />} />
+          <Route path='/description' element={<Description />} />
         </Routes>
       </div>
     </div>
