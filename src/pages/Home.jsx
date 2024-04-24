@@ -15,8 +15,7 @@ const Home = () => {
         setLoading(true);
 
         try {
-            // const res = await axios.get(`${apiUrl}/getProducts`); // Use axios.get with the correct URL
-            const apiUrl = "https://medical1backend.onrender.com/api/v1";
+            const res = await axios.get(`${apiUrl}/getProducts`); // Use axios.get with the correct URL
             setPost(res.data); // Access the data property of the response object
         } catch (err) {
             console.log("Error in loading:", err);
