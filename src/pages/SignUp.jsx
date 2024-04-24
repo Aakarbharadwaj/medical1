@@ -44,13 +44,13 @@ const SignUp = () => {
                     </div>
                     <div className="mb-6 text-center">
                         <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
-                            Login
+                            SignUp
                         </button>
                     </div>
                 </form>
                 <div className="flex justify-center">
                     <button className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
-                        Login with Google
+                        SignUp with Google
                     </button>
                 </div>
             </div>
