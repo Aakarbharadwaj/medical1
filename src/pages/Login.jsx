@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom';
 
 const Login = () => {
   const [formdata, setFormdata] = useState({
@@ -43,9 +44,11 @@ const Login = () => {
             <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="role" type="text" name='role' value={formdata.role} onChange={changeHandler} placeholder="Enter your role" />
           </div>
           <div className="mb-6 text-center">
-            <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
-              Login
-            </button>
+            <Link to={'/'}>
+              <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
+                Login
+              </button>
+            </Link>
           </div>
         </form>
         <div className="flex justify-center">
