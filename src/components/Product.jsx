@@ -18,7 +18,7 @@ const Product = (props) => {
     }
 
     return (
-        <div className="bg-white shadow-md rounded-md p-4 border w-1/6  hover:scale-110 transition duration-300 ease-in">
+        <div className="bg-white shadow-md rounded-md p-4 border w-full sm:w-1/2 md:w-auto lg:w-1/4 xl:w-1/5 hover:scale-110 transition duration-300 ease-in">
             <div>
                 <img src={item.image} alt='image' className="w-full h-48 object-cover" />
             </div>
@@ -29,10 +29,16 @@ const Product = (props) => {
             </div>
             <div className="flex justify-between items-center mt-4">
                 {
-                    cart.some((p) => p.id === item.id) ? (<button onClick={() => removeFromCart(item)} className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Remove</button>) : (<button onClick={() => addToCart(item)} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Add</button>)
+                    cart.some((p) => p.id === item.id) ? (
+                        <button onClick={() => removeFromCart(item)} className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Remove</button>
+                    ) : (
+                        <button onClick={() => addToCart(item)} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Add</button>
+                    )
                 }
             </div>
         </div>
+
+
     );
 }
 
