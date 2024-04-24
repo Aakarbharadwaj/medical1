@@ -5,7 +5,8 @@ import { useSelector } from 'react-redux';
 import axios from 'axios'; // Import Axios
 
 const Home = () => {
-    const apiUrl = "http://localhost:4000/api/v1";
+    // const apiUrl = "http://localhost:4000/api/v1";
+    const apiUrl = "https://medical1backend.onrender.com/api/v1";
     const [loading, setLoading] = useState(false);
     const [post, setPost] = useState([]);
     const keyword = useSelector((state) => state.search.keyword);
@@ -14,7 +15,8 @@ const Home = () => {
         setLoading(true);
 
         try {
-            const res = await axios.get(`${apiUrl}/getProducts`); // Use axios.get with the correct URL
+            // const res = await axios.get(`${apiUrl}/getProducts`); // Use axios.get with the correct URL
+            const apiUrl = "https://medical1backend.onrender.com/api/v1";
             setPost(res.data); // Access the data property of the response object
         } catch (err) {
             console.log("Error in loading:", err);
