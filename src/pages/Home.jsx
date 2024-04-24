@@ -38,6 +38,7 @@ const Home = () => {
                     product.category.toLowerCase().includes(keyword.toLowerCase())
                 );
                 setPost(filteredProducts);
+                keyword = "";
             } else {
                 setPost(data);
             }
@@ -59,7 +60,7 @@ const Home = () => {
     }, [keyword]);
 
     return (
-        <div className="flex flex-wrap gap-6 w-90 bg-blue-50 mx-auto my-6 px-6 py-6 justify-center">
+        <div className="flex flex-wrap gap-6 bg-blue-50 mx-auto my-6 px-6 py-6 justify-center">
             {loading ?
                 <Spinner /> :
                 post ? post.map(item => <Product key={item.id} item={item} />) : ("no data found")
