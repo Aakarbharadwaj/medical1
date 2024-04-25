@@ -14,12 +14,9 @@ const Search = () => {
         dispatch(setSearchKeyword(searchItem))
     }
     return (
-        <div>
-            <div className='border-2 rounded-full w-1/3 m-auto mt-5 flex px-2 hover:border-orange-500 hover:scale-150 transition duration-300'>
-                <input type='text' placeholder='Search here' className='w-full outline-none' onChange={handleChange} />
-                <button className='hover:text-orange-500' onClick={handleSearch} ><FaSearch /></button>
-            </div>
-            <span className=' float-right ml-10 hover:text-green-400'><NavLink to={'/admin'}>Admin</NavLink></span>
+        <div className='border-2 rounded-full w-1/3 m-auto mt-5 flex px-2 hover:border-orange-500 hover:scale-150 transition duration-300'>
+            <input type='text' placeholder='Search here' className='w-full outline-none' onChange={handleChange} />
+            <button className='hover:text-orange-500' onClick={handleSearch} ><FaSearch /></button>
         </div>
     )
 }
