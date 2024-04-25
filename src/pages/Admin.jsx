@@ -23,7 +23,7 @@ const AdminPanelForm = () => {
                 </div>
                 <div className="mb-4">
                     <label htmlFor="category" className="block text-sm font-medium">Category</label>
-                    <input type="text" id="category" name="category" className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm bg-gray-800 text-white" />
+                    <input placeholder='tablet / serup / steroid / energy drink' type="text" id="category" name="category" className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm bg-gray-800 text-white" />
                 </div>
                 <div className="mb-4">
                     <label htmlFor="image" className="block text-sm font-medium">Image</label>
