@@ -2,8 +2,8 @@ import React from 'react';
 
 const AdminPanelForm = () => {
     return (
-        <div className="max-w-4xl mx-auto mt-8 p-6 bg-black rounded-lg shadow-md text-white border-4 border-sky-500">
-            <h2 className="text-2xl font-semibold mb-4">Add Product</h2>
+        <div className="max-w-4xl mx-auto mt-8 p-6 bg-black rounded-lg shadow-md text-white border-4 border-sky-600">
+            <h2 className="text-2xl font-semibold mb-4 text-green-400">Add Product</h2>
             <form>
                 <div className="mb-4">
                     <label htmlFor="id" className="block text-sm font-medium">ID</label>

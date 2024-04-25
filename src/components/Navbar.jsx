@@ -26,7 +26,7 @@ const Navbar = () => {
                     <li className='ml-10 hover:text-green-400'><NavLink to={'/about'}>About</NavLink></li>
                     <li className='ml-10 hover:text-green-400'><NavLink to={'/admin'}>Admin</NavLink></li>
                     {login ? (<li className='ml-10 hover:text-green-400' onClick={() => setLogin(false)}><NavLink to={'/login'}>LogIn</NavLink></li>) : (<li className='ml-10 hover:text-green-400 ' onClick={() => setLogin(true)}><NavLink to={'/signup'}>SignUp</NavLink></li>)}
-                    <li className='ml-20 hover:text-green-400'>
+                    <li className='ml-20 hover:text-green-400 text-orange-300'>
                         <NavLink to={'/cart'}>
                             <div className="relative">
                                 <FaShoppingCart className="absolute top-0 right-12 sm:right-1 text-2xl" />

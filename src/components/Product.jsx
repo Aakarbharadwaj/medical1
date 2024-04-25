@@ -2,6 +2,7 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { toast } from 'react-hot-toast';
 import { add, remove } from '../redux/slice/CartSlice';
+import { IoIosStar } from "react-icons/io";
 
 
 const Product = (props) => {
@@ -25,7 +26,7 @@ const Product = (props) => {
             <div className="mt-4">
                 <h2 className="text-xl font-semibold">{item.category}</h2>
                 <p className="text-gray-600 mt-2 text-[10px] text-left ">{item.description && item.description.length > 20 ? `${item.description.slice(0, 100)}...` : item.description}</p>
-                <p className="text-gray-800 font-semibold mt-2">${item.price}</p>
+                <p className="text-gray-800 font-semibold mt-2">${item.price}/-</p>
             </div>
             <div className="flex justify-between items-center mt-4">
                 {
@@ -35,6 +36,7 @@ const Product = (props) => {
                         <button onClick={() => addToCart(item)} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Add</button>
                     )
                 }
+                <p className='flex items-center  bg-green-700 px-2 py-1 rounded-lg text-green-50 font-bold'>{item.rating}<span className='text-xs ml-1'><IoIosStar /></span></p>
             </div>
         </div>
 
