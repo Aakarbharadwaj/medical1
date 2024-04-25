@@ -21,11 +21,11 @@ const Navbar = () => {
             </div>
 
             <div>
-                <ul className='flex text-blue-50 text-xs gap-0 sm:text-xl '>
+                <ul className='flex flex-wrap text-blue-50 text-xs gap-0 sm:text-xl '>
                     <li className='hover:text-green-400' onClick={handleSearch}><NavLink to={'/'}>Home</NavLink></li>
-                    <li className='ml-10 hover:text-green-400'><NavLink to={'/about'}>About</NavLink></li>
-                    <li className='ml-10 hover:text-green-400'><NavLink to={'/admin'}>Admin</NavLink></li>
-                    {login ? (<li className='ml-10 hover:text-green-400' onClick={() => setLogin(false)}><NavLink to={'/login'}>LogIn</NavLink></li>) : (<li className='ml-10 hover:text-green-400 ' onClick={() => setLogin(true)}><NavLink to={'/signup'}>SignUp</NavLink></li>)}
+                    <li className='ml-5 sm:ml-10 hover:text-green-400'><NavLink to={'/about'}>About</NavLink></li>
+                    <li className='ml-5 sm:ml-10 hover:text-green-400'><NavLink to={'/admin'}>Admin</NavLink></li>
+                    {login ? (<li className='ml-5 sm:ml-10 hover:text-green-400' onClick={() => setLogin(false)}><NavLink to={'/login'}>LogIn</NavLink></li>) : (<li className='ml-10 hover:text-green-400 ' onClick={() => setLogin(true)}><NavLink to={'/signup'}>SignUp</NavLink></li>)}
                     <li className='ml-20 hover:text-green-400 text-orange-300'>
                         <NavLink to={'/cart'}>
                             <div className="relative">
