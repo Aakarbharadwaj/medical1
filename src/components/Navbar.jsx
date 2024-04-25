@@ -24,6 +24,7 @@ const Navbar = () => {
                 <ul className='flex text-blue-50 text-xs gap-0 sm:text-xl '>
                     <li className='hover:text-green-400' onClick={handleSearch}><NavLink to={'/'}>Home</NavLink></li>
                     <li className='ml-10 hover:text-green-400'><NavLink to={'/about'}>About</NavLink></li>
+                    <li className='ml-10 hover:text-green-400'><NavLink to={'/admin'}>Admin</NavLink></li>
                     {login ? (<li className='ml-10 hover:text-green-400' onClick={() => setLogin(false)}><NavLink to={'/login'}>LogIn</NavLink></li>) : (<li className='ml-10 hover:text-green-400 ' onClick={() => setLogin(true)}><NavLink to={'/signup'}>SignUp</NavLink></li>)}
                     <li className='ml-20 hover:text-green-400'>
                         <NavLink to={'/cart'}>
@@ -31,7 +32,7 @@ const Navbar = () => {
                                 <FaShoppingCart className="absolute top-0 right-12 sm:right-1 text-2xl" />
                                 {
                                     cart.length > 0 &&
-                                    <span className="absolute top-[-7px] left-[-11px] bg-green-500 rounded-full w-4 h-4 flex justify-center items-center text-white text-xs animate-bounce">{cart.length}</span>
+                                    <span className="absolute top-[-7px] left-[-60px] sm:left-[-11px] bg-green-500 rounded-full w-4 h-4 flex justify-center items-center text-white text-xs animate-bounce">{cart.length}</span>
                                 }
                             </div>
 

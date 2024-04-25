@@ -9,11 +9,12 @@ import About from './pages/About'
 import Login from './pages/Login'
 import Description from './pages/Description'
 import SignUp from './pages/SignUp'
+import Admin from './pages/Admin'
 function App() {
 
 
   return (
-    <div className=''>
+    <div className='bg-sky-300'>
       <div className='items-end'>
         <Navbar />
         <Search />
@@ -25,6 +26,7 @@ function App() {
           <Route path='/about' element={<About />} />
           <Route path='/login' element={<Login />} />
           <Route path='/signup' element={<SignUp />} />
+          <Route path='/admin' element={<Admin />} />
           <Route path='/description' element={<Description />} />
         </Routes>
       </div>
