@@ -13,17 +13,33 @@ const AdminPanelForm = () => {
     });
     const changeHandler = (e) => {
         const { name, value, type } = e.target;
-        setFormValue((prevData) => {
-            return {
+
+        if (type === 'file') {
+            const file = e.target.files[0];
+            setFormValue((prevData) => ({
+                ...prevData,
+                [name]: URL.createObjectURL(file)
+            }));
+        } else {
+            setFormValue((prevData) => ({
                 ...prevData,
                 [name]: value
-            }
-        })
-    }
+            }));
+        }
+    };
+    // const changeHandler = (e) => {
+    //     const { name, value, type } = e.target;
+    //     setFormValue((prevData) => {
+    //         return {
+    //             ...prevData,
+    //             [name]: value
+    //         }
+    //     })
+    // }
     const onSubmit = async (e) => {
         e.preventDefault(); // Prevent default form submission behavior
         try {
-            const response = await axios.post("http://localhost:4000/api/v1/addProducts", formValue);
+            const response = await axios.post("https://medical1backend.onrender.com/api/v1/addProducts/", formValue);
 
             toast.success("data sent successfully from Admin");
             setFormValue({
@@ -96,7 +112,7 @@ const AdminPanelForm = () => {
                 </div>
                 <div className="mb-4">
                     <label htmlFor="image" className="block text-sm font-medium">Image</label>
-                    <input onChange={changeHandler} type="file" id="image" name="image" value={formValue.image} className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm bg-gray-800 text-white" />
+                    <input onChange={changeHandler} type="file" id="image" name="image" className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm bg-gray-800 text-white" />
                 </div>
                 <div className="mb-4">
                     <label htmlFor="rating" className="block text-sm font-medium">Rating</label>

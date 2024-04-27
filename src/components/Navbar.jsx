@@ -4,6 +4,7 @@ import { FaShoppingCart } from "react-icons/fa";
 import { useSelector } from 'react-redux';
 import { setSearchKeyword } from '../redux/slice/SearchSlice';
 import { useDispatch } from 'react-redux';
+import Search from './Search';
 
 
 const Navbar = () => {
@@ -21,7 +22,7 @@ const Navbar = () => {
             </div>
 
             <div>
-                <ul className='flex flex-wrap text-blue-50 text-xs gap-0 sm:text-xl '>
+                <ul className='flex flex-wrap text-blue-50 text-xs gap-0 sm:text-xl'>
                     <li className='hover:text-green-400' onClick={handleSearch}><NavLink to={'/'}>Home</NavLink></li>
                     <li className='ml-2 sm:ml-10 hover:text-green-400'><NavLink to={'/about'}>About</NavLink></li>
                     <li className='ml-2 sm:ml-10 hover:text-green-400'><NavLink to={'/admin'}>Admin</NavLink></li>

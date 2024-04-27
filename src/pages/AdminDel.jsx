@@ -3,8 +3,9 @@ import Product from '../components/Product';
 import Spinner from '../components/Spinner';
 import { useSelector } from 'react-redux';
 import axios from 'axios'; // Import Axios
+import AdminProduct from '../components/AdminProduct';
 
-const Home = () => {
+const AdminDel = () => {
     // const apiUrl = "http://localhost:4000/api/v1";
     const apiUrl = "https://medical1backend.onrender.com/api/v1";
     const [loading, setLoading] = useState(false);
@@ -64,10 +65,10 @@ const Home = () => {
         <div className="flex flex-wrap gap-6 bg-sky-100 mx-auto my-6 px-6 py-6 justify-center">
             {loading ?
                 <Spinner /> :
-                post ? post.map(item => <Product key={item.id} item={item} />) : ("no data found")
+                post ? post.map(item => <AdminProduct key={item.id} item={item} />) : ("no data found")
             }
         </div>
     );
 }
 
-export default Home;
+export default AdminDel;

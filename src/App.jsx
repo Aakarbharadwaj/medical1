@@ -10,6 +10,7 @@ import Login from './pages/Login'
 import Description from './pages/Description'
 import SignUp from './pages/SignUp'
 import Admin from './pages/Admin'
+import AdminDel from './pages/AdminDel'
 function App() {
 
 
@@ -27,6 +28,7 @@ function App() {
           <Route path='/login' element={<Login />} />
           <Route path='/signup' element={<SignUp />} />
           <Route path='/admin' element={<Admin />} />
+          <Route path='/admindel' element={<AdminDel />} />
           <Route path='/description' element={<Description />} />
         </Routes>
       </div>
