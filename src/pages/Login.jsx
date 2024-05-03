@@ -1,7 +1,10 @@
+import axios from 'axios';
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom';
+import toast from 'react-hot-toast';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Login = () => {
+  const navigate = useNavigate()
   const [formdata, setFormdata] = useState({
     name: "",
     email: "",
@@ -16,9 +19,26 @@ const Login = () => {
         [name]: value
       }
     })
+
   }
-  const submitHandler = (e) => {
+  const submitHandler = async (e) => {
     e.preventDefault();
+    try {
+      const loginData = await axios.post("https://medical1backend.onrender.com/api/v1/login", formdata);
+
+      toast.success("user loged in successfully...")
+
+      setFormdata({
+        name: "",
+        email: "",
+        password: "",
+        role: ""
+      })
+      navigate('/');
+    }
+    catch (err) {
+      toast.error("error in User LogIn")
+    }
     console.log(formdata); // Log the form data to the console
   }
 
@@ -28,27 +48,27 @@ const Login = () => {
         <h2 className="text-center text-xl font-bold mb-4 text-green-500">Login</h2>
         <form onSubmit={submitHandler}>
           <div className="mb-4">
-            <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="name">Name</label>
-            <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="name" type="text" name='name' value={formdata.name} onChange={changeHandler} placeholder="Enter your name" />
+            <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="name" aria-required>Name</label>
+            <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="name" type="text" name='name' required value={formdata.name} onChange={changeHandler} placeholder="Enter your name" />
           </div>
           <div className="mb-4">
             <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="email">Email</label>
-            <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="email" type="email" name='email' value={formdata.email} onChange={changeHandler} placeholder="Enter your email" />
+            <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="email" type="email" name='email' required value={formdata.email} onChange={changeHandler} placeholder="Enter your email" />
           </div>
           <div className="mb-4">
             <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="password">Password</label>
-            <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="password" type="password" name='password' value={formdata.password} onChange={changeHandler} placeholder="Enter your password" />
+            <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="password" type="password" name='password' required value={formdata.password} onChange={changeHandler} placeholder="Enter your password" />
           </div>
           <div className="mb-4">
             <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="role">Role</label>
-            <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="role" type="text" name='role' value={formdata.role} onChange={changeHandler} placeholder="Enter your role" />
+            <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="role" type="text" name='role' required value={formdata.role} onChange={changeHandler} placeholder="Enter your role" />
           </div>
           <div className="mb-6 text-center">
-            <Link to={'/'}>
-              <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
-                Login
-              </button>
-            </Link>
+            {/* <Link to={'/'}> */}
+            <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
+              Login
+            </button>
+            {/* </Link> */}
           </div>
         </form>
         <div className="flex justify-center">
@@ -63,3 +83,6 @@ const Login = () => {
 }
 
 export default Login
+
+
+ 
