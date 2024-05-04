@@ -1,8 +1,8 @@
 import React from 'react'
-import { useParams } from 'react-router-dom'
+// import { useParams } from 'react-router-dom'
 
 const About = () => {
-  const { id } = useParams();
+  // const { id } = useParams();
   return (
     <div>About:{id}</div>
   )

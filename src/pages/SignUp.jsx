@@ -56,10 +56,10 @@ const SignUp = () => {
             <div className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 flex flex-col w-full md:w-1/3">
                 <h2 className="text-center text-xl font-bold mb-4 text-cyan-400">SignUp</h2>
                 <form onSubmit={submitHandler}>
-                    {/* <div className="mb-4">
+                    {<div className="mb-4">
                         <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="name">Name</label>
                         <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="name" type="text" name='name' required value={formdata.name} onChange={changeHandler} placeholder="Enter your name" />
-                    </div> */}
+                    </div>}
                     <div className="mb-4">
                         <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="email" onChange={() => (s)}>Email</label>
                         <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="email" type="email" name='email' required value={formdata.email} onChange={changeHandler} placeholder="Enter your email" />

@@ -24,12 +24,12 @@ function App() {
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/cart' element={<Cart />} />
-          <Route path='/about/:id' element={<About />} />
+          <Route path='/about' element={<About />} />
           <Route path='/login' element={<Login />} />
           <Route path='/signup' element={<SignUp />} />
           <Route path='/admin' element={<Admin />} />
           <Route path='/admindel' element={<AdminDel />} />
-          <Route path='/description' element={<Description />} />
+          <Route path='/description/:id' element={<Description />} />
         </Routes>
       </div>
     </div>
