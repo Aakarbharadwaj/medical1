@@ -4,7 +4,9 @@ import React from 'react'
 const About = () => {
   // const { id } = useParams();
   return (
-    <div>About:{id}</div>
+    <doiv>
+      About
+    </doiv>
   )
 }
 

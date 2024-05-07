@@ -11,6 +11,7 @@ import Description from './pages/Description'
 import SignUp from './pages/SignUp'
 import Admin from './pages/Admin'
 import AdminDel from './pages/AdminDel'
+import Footer from './pages/Footer'
 function App() {
 
 
@@ -32,6 +33,7 @@ function App() {
           <Route path='/description/:_id' element={<Description />} />
         </Routes>
       </div>
+      <div><Footer/></div>
     </div>
   )
 }
