@@ -21,7 +21,7 @@ const Product = (props) => {
 
     return (
         <div className="bg-white shadow-md rounded-md p-4 border w-full sm:w-1/2 md:w-auto lg:w-1/4 xl:w-1/5 hover:scale-110 transition duration-300 ease-in">
-            <Link to={`/description/${item.id}`}>
+            <Link to={`/description/${item._id}`}>
                 <div>
                     <img src={item.image} alt={`${item.category} image`} className="w-full h-48 object-cover" />
                 </div>

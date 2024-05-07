@@ -31,8 +31,8 @@ const Home = () => {
         try {
             const res = await axios.get(`${apiUrl}/getProducts`); // Use axios.get with the correct URL
             const data = res.data; // Access the data property of the response object
-            
-            
+
+
             if (keyword !== '') {
                 // Filter products based on categories that include the keyword
                 const filteredProducts = data.filter(product =>
@@ -66,6 +66,7 @@ const Home = () => {
                 <Spinner /> :
                 post ? post.map(item => <Product key={item.id} item={item} />) : ("no data found")
             }
+            
         </div>
     );
 }
