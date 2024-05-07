@@ -25,6 +25,7 @@ const Product = (props) => {
                 <div>
                     <img src={item.image} alt={`${item.category} image`} className="w-full h-48 object-cover" />
                 </div>
+            </Link>
                 <div className="mt-4">
                     <h2 className="text-xl font-semibold">{item.title}</h2>
                     <p className="text-gray-600 mt-2 text-[10px] text-left ">{item.description && item.description.length > 20 ? `${item.description.slice(0, 100)}...` : item.description}</p>
@@ -40,7 +41,6 @@ const Product = (props) => {
                     }
                     <p className='flex items-center  bg-green-700 px-2 py-1 rounded-lg text-green-50 font-bold'>{item.rating}<span className='text-xs ml-1'><IoIosStar /></span></p>
                 </div>
-            </Link>
         </div>
 
     );

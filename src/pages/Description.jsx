@@ -30,7 +30,7 @@ const Description = () => {
 
 
 
-  console.log(apidata)
+  // console.log(apidata)
 
 
 
