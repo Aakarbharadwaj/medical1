@@ -16,7 +16,7 @@ const Navbar = () => {
     }
     return (
 
-        <nav className='flex justify-between items-center p-2 bg-blue-900'>
+        <nav className='flex justify-between items-center p-2 bg-blue-950'>
             <div className='w-20'>
                 <NavLink to={'/'}><img src='https://uploads.turbologo.com/uploads/design/hq_preview_image/881852/draw_svg20210625-19886-u8ghol.svg.png' alt='Logo' className='h-auto w-auto max-w-20 max-h-full' /></NavLink>
             </div>

@@ -12,7 +12,7 @@ import SignUp from './pages/SignUp'
 import Admin from './pages/Admin'
 import AdminDel from './pages/AdminDel'
 import Footer from './pages/Footer'
-// import Protected from './pages/Protected'
+import Protected from './pages/Protected'
 function App() {
 
 
