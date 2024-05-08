@@ -61,12 +61,11 @@ const Home = () => {
     }, [keyword]);
 
     return (
-        <div className="flex flex-wrap gap-6 bg-sky-100 mx-auto my-6 px-6 py-6 justify-center">
+        <div className="flex flex-wrap gap-6 bg-sky-100 mx-auto my-6 px-6 py-6 justify-center min-h-80">
             {loading ?
                 <Spinner /> :
                 post ? post.map(item => <Product key={item.id} item={item} />) : ("no data found")
             }
-            
         </div>
     );
 }

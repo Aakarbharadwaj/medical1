@@ -4,9 +4,9 @@ import React from 'react'
 const About = () => {
   // const { id } = useParams();
   return (
-    <doiv>
-      About
-    </doiv>
+    <div className='min-h-80'>
+      updates are going on server...Soon data will be uplaoded. Thankyou.
+    </div>
   )
 }
 

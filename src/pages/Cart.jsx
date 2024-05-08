@@ -13,9 +13,9 @@ const Cart = () => {
         }, 0))
     }, [cart])
     return (
-        <div >
+        <div>
             {cart.length > 0 ? (<div>
-                <div className='border border-x-0 border-b-0 mt-10 pt-10'>{
+                <div className='border border-x-0 border-b-0 mt-10 pt-10 '>{
                     cart.map((item, index) => (
                         <CartItems key={index} item={item} />
                     ))
