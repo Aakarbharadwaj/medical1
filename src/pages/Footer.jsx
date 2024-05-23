@@ -1,5 +1,5 @@
 import React from "react";
-import { FaShoppingCart } from "react-icons/fa";
+// import { FaShoppingCart } from "react-icons/fa";
 const Footer = () => {
     return (
         <div className="bg-black flex text-gray-400 justify-around">

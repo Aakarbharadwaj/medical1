@@ -4,7 +4,7 @@ import { FaShoppingCart } from "react-icons/fa";
 import { useSelector } from 'react-redux';
 import { setSearchKeyword } from '../redux/slice/SearchSlice';
 import { useDispatch } from 'react-redux';
-import Search from './Search';
+// import Search from './Search';
 
 
 const Navbar = () => {

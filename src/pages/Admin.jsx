@@ -13,7 +13,6 @@ const AdminPanelForm = () => {
     });
     const changeHandler = (e) => {
         const { name, value, type } = e.target;
-
         if (type === 'file') {
             const file = e.target.files[0];
             setFormValue((prevData) => ({
@@ -39,6 +38,7 @@ const AdminPanelForm = () => {
     const onSubmit = async (e) => {
         e.preventDefault(); // Prevent default form submission behavior
         try {
+            // const response = await axios.post("http://localhost:4000/api/v1/login", formValue);
             const response = await axios.post("https://medical1backend.onrender.com/api/v1/addProducts/", formValue);
 
             toast.success("data sent successfully from Admin");

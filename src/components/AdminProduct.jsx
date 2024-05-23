@@ -11,6 +11,7 @@ const AdminProduct = (props) => {
     const handleButtonClick = async (id) => {
         try {
             const response = await axios.delete(`https://medical1backend.onrender.com/api/v1/deleteProducts/${id}`);
+            // const response = await axios.delete(`http://localhost:4000/api/v1/deleteProducts/${id}`);
             console.log('Response:', response.data);
             window.location.reload();
             // Handle response if needed

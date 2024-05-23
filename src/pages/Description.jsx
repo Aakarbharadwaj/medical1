@@ -27,16 +27,7 @@ const Description = () => {
 
   }, [])
 
-
-
-
   // console.log(apidata)
-
-
-
-
-
-
 
   return (
 

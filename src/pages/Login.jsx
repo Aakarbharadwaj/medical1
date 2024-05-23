@@ -6,10 +6,10 @@ import { Link, useNavigate } from 'react-router-dom';
 const Login = () => {
   const navigate = useNavigate()
   const [formdata, setFormdata] = useState({
-    name: "",
+    // name: "",
     email: "",
     password: "",
-    role: ""
+    // role: ""
   });
   const changeHandler = (e) => {
     const { name, value, type } = e.target;
@@ -27,15 +27,27 @@ const Login = () => {
       const loginData = await axios.post("https://medical1backend.onrender.com/api/v1/login", formdata);
       // const loginData = await axios.post("http://localhost:4000/api/v1/login", formdata);
 
-      toast.success("user loged in successfully...")
+      console.log(">>>>>>>>>>>>", loginData.data.token)
+      // localStorage.setItem('login', loginData.data.token);
 
-      setFormdata({
-        // name: "",
-        email: "",
-        password: "",
-        // role: ""
-      })
-      navigate('/');
+      if (loginData.data.success) {
+        toast.success("user loged in successfully...")
+        localStorage.setItem('login', loginData.data.token);
+        setFormdata({
+          // name: "",
+          email: "",
+          password: "",
+          // role: ""
+        })
+        navigate('/');
+        // navigate('/'); // Navigate to a protected route
+      } else {
+        console.error('Login failed');
+      }
+
+
+      // const data = loginData;
+
     }
     catch (err) {
       toast.error("error in User LogIn")

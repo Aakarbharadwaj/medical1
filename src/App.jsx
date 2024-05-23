@@ -17,15 +17,24 @@ function App() {
 
 
   return (
-    <div className='bg-sky-300'>
+    <div className='bg-green-500'>
       <div className='items-end'>
         <Navbar />
+
         <Search />
+
       </div>
       <div>
         <Routes>
           <Route path='/' element={<Home />} />
-          <Route path='/cart' element={<Cart />} />
+          {/* <Route path='/cart' element={<Protected Components={Cart} />} /> */}
+          <Route path="/cart" element={
+            <Protected>
+              <Cart />
+            </Protected>
+          } />
+
+          {/* <Route path='/cart' element={<Cart />} /> */}
           <Route path='/about' element={<About />} />
           <Route path='/login' element={<Login />} />
           <Route path='/signup' element={<SignUp />} />
